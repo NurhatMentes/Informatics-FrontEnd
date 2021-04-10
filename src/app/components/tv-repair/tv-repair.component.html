@@ -1,0 +1,39 @@
+<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+
+<div *ngIf="dataLoaded == true" class="cd-hero" 
+style="background-image:url('https://tvmerkezservis.com/wp-content/uploads/2020/09/mobil-2.jpg');
+background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;">
+    <ul class="cd-hero-slider">
+        <!-- autoplay -->
+        <li class="selected" *ngFor="let tvRepair of tvRepairs">
+            <div class="cd-full-width">
+                <div class="container js-tm-page-content tm-page-1 tm-section-margin-t-small" data-page-no="1">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="tm-home-container-outer">
+                                <div class="tm-home-container">
+                                    <div class="tm-home-title-container">
+                                        <h2 class="tm-text-title text-xs-center tm-home-title"
+                                         style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                         font-size: 40px;">Televizyon Teknik Servisi</h2>
+                                    </div>
+                                    <div class="tm-home-description-container tm-bg-dark-blue">
+                                        <div class="text-xs-left tm-textbox">
+                                            <p class="tm-text tm-home-description">{{tvRepair.description}}</p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tm-home-container-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .cd-full-width -->
+        </li>
+    </ul>
+</div>

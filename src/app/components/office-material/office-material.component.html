@@ -1,0 +1,68 @@
+<!-- Page Title -->
+<div class="section section-breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Ofis & Kırtasiye Ürünleri</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="eshop-section section">
+	<div class="container">
+		<div class="row" >
+			<div *ngFor="let officeMaterial of officeMaterials" class="col-md-3 col-sm-6">
+				<!-- Product -->
+				<div  class="shop-item" >
+					<!-- Product Image -->
+					<div class="shop-item-image">
+					<a href="/officeMaterial/productDetail/{{officeMaterial.officeMaterialId}}"	><img src="{{imageBasePath}}{{officeMaterial.imagePath}}" alt="{{officeMaterial.imagePath}}"></a>
+					</div>
+					<!-- Product Title -->
+					<div class="title">
+						<h3><a href="#" >
+								<h4 style="font-weight: bold;">{{officeMaterial.officeName}}</h4>
+							</a></h3>
+					</div>
+					<!-- Product Available Colors-->
+					<div class="colors">
+						<span class="color-white"></span>
+						<span class="color-black"></span>
+						<span class="color-blue"></span>
+						<span class="color-orange"></span>
+						<span class="color-green"></span>
+					</div>
+					<!-- Product Price-->
+					<div class="price">
+						<h3>{{officeMaterial.price}} ₺</h3>
+					</div>
+					<!-- Add to Cart Button -->
+					<div class="actions">
+						<a href="/officeMaterial/productDetail/{{officeMaterial.officeMaterialId}}" ><button 
+							routerLink="/officeMaterial/productDetail/{{officeMaterial.officeMaterialId}}" type="button" style="width: 70%; height: 40%;"
+								class="btn btn-dark"><b>Hızlı İncele</b></button> </a>
+					</div>
+				</div>
+				<!-- End Product -->
+			</div>
+
+			<div class="pagination-wrapper ">
+				<ul class="pagination pagination-lg">
+					<li class="disabled"><a href="#">Önceki</a></li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">9</a></li>
+					<li><a href="#">10</a></li>
+					<li><a href="#">Sonraki</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
