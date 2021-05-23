@@ -1,0 +1,20 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  .dashboard-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 270px;
+    background-color: #f14c0a;
+  }
+  .dashboard-right {
+    flex: 7;
+    .dashboard-content {
+      display: flexbox;
+      padding: 0 50px;
+      padding-bottom: 50px;
+    }
+  }
+}

@@ -368,7 +368,6 @@ a:hover {
 }
 .contact-us-details {
   margin: 20px 0;
-  font-size: 0.9em;
 }
 /*--------------------------------------------------------------------------
 +	Video Wrapper Style
@@ -1718,8 +1717,8 @@ span.color-red {
 --------------------------------------------------------------------------*/
 .footer {
   background: #222;
-  color: #A0A0A0;
-  padding: 0 20px 10px 20px;
+  color: #fff8f8;
+  padding: 0 20px 50px 380px;
   border-top: 4px solid #4f8db3;
   margin-top: 20px;
   -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
@@ -1729,8 +1728,8 @@ span.color-red {
 }
 .footer h3 {
   color: #E4E4E4;
-  font-size: 1.3em;
-  border-bottom: 1px dotted #7C7C7C;
+  font-size: 1.5em;
+
 }
 .footer ul {
   padding: 0;
@@ -1741,6 +1740,7 @@ span.color-red {
 .footer-stay-connected a {
   text-align: left;
   text-indent: -9999px;
+  margin-left: 150px;
   display: block;
   width: 115px;
   height: 40px;
@@ -1773,10 +1773,12 @@ span.color-red {
 }
 .footer-copyright {
   text-align: center;
-  color: #7C7C7C;
+  color: #f5eded;
   border-top: 1px dotted #7C7C7C;
-  padding-top: 10px;
-  font-size: 0.9em;
+  border-right: 100px;
+  padding-top: 15px;
+  font-size: 1.5em;
+  padding-right: 300px;
 }
 /*--------------------------------------------------------------------------
 +	Pagination Style (overrides Bootstrap style)

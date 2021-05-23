@@ -1,0 +1,62 @@
+<div class="container" style="padding-top: 20px;">
+    <form [formGroup]="productAddForm">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="videoName" placeholder="product name"
+                formControlName="videoName" />
+            <label for="floatingInput">Ürün Adı</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="price" placeholder="product price" formControlName="price" />
+            <label for="floatingInput">Fiyat</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="oldPrice" placeholder="product oldPrice"
+                formControlName="oldPrice" />
+            <label for="floatingInput">Eski Fiyat</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="stockQuantity" placeholder="product stockQuantity"
+                formControlName="stockQuantity" />
+            <label for="floatingInput">Stok Sayısı</label>
+        </div>
+
+         <label style="margin-left: 1px;">Açıklama</label>
+        <div class="form-floating mb-3">
+            <ckeditor data="<p>Some initial data</p>" 
+                 [config]="{ extraPlugins: 'divarea' }"
+                  formControlName="description"></ckeditor>
+        </div>
+
+        <label style="margin-left: 1px;">Kısa Açıklama</label>
+        <div class="form-floating mb-3">
+            <ckeditor data="<p>Some initial data</p>" 
+                 [config]="{ extraPlugins: 'divarea' }"
+                  formControlName="quickDescription"></ckeditor>
+        </div>
+
+        <label style="margin-left: 1px;">Özellikler</label>
+        <div class="form-floating mb-3">
+            <ckeditor   
+                 [config]="{ extraPlugins: 'divarea' }"
+                  formControlName="features"></ckeditor>
+        </div>
+
+          
+        
+        
+        <label style="margin-left: 1px;">Resim Ekle</label>
+        <div class="form-floating mb-3">
+            <div class="input-group">
+                <input type="file" formControlName="imagePath" class="form-control" id="imagePath"
+                    aria-describedby="imagePath" aria-label="Upload">
+            </div>
+        </div>
+    </form>
+     <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto" >
+        <button style="width: 80%; margin-left: 9%; " type="button" (click)="add()" class="btn btn-success btn-lg">Ekle</button>
+    </div>
+
+</div>

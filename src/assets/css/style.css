@@ -1305,7 +1305,7 @@ a:focus {
 .footer .footer-link,
 .footer .footer-newsletter {
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 75px;
     color: #999999;
 }
 
@@ -1321,8 +1321,8 @@ a:focus {
 
 .footer .footer-link a {
     display: block;
-    margin-bottom: 10px;
-    color: #999999;
+    margin-bottom: spx;
+    color: #fffefe;
     transition: .3s;
 }
 
@@ -1363,7 +1363,7 @@ a:focus {
 }
 
 .footer .footer-social a:hover i {
-    color: #999999;
+    color: #b33232;
 }
 
 .footer .footer-newsletter .form {
@@ -1398,7 +1398,8 @@ a:focus {
 }
 
 .footer .copyright {
-    padding: 0 30px;
+ 
+    padding-right: 150px;
 }
 
 .footer .copyright .row {
@@ -1413,7 +1414,7 @@ a:focus {
 }
 
 .footer .copyright .col-md-6:last-child p {
-    text-align: right;
+    text-align: center;
 }
 
 .footer .copyright p a {

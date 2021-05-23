@@ -1,0 +1,16 @@
+<h2>Kullanıcılar</h2>
+
+<table>
+    <tr>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>E-Posta Adresi</th>
+        <th>Rolü</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.operationName | uppercase}}</td>
+    </tr>
+</table>

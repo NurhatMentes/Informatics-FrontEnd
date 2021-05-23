@@ -1,4 +1,13 @@
-<div class="cd-hero" 
+  <header>
+    <app-navi></app-navi>
+  </header>
+
+  <div *ngIf="dataLoaded == false"  class="spinner-grow text-primary" role="status">
+	<span class="visually-hidden">Loading...</span>
+</div>
+
+
+<div *ngIf="dataLoaded == true" class="cd-hero" 
 style="background-image:url('http://elektrikelektroniktamir.com/wp-content/uploads/2017/06/Uydu.png');
 background-repeat: no-repeat;
   background-attachment: fixed;
@@ -28,7 +37,8 @@ background-repeat: no-repeat;
                         </div>
                     </div>
                 </div>
-            </div> <!-- .cd-full-width -->
+            </div> 
         </li>
     </ul>
 </div>
+<app-footer></app-footer>

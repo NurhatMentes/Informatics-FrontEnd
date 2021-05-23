@@ -1,4 +1,8 @@
 <!-- Page Title -->
+  <header>
+    <app-navi></app-navi>
+  </header>
+
 <div class="section section-breadcrumbs">
 	<div class="container">
 		<div class="row">
@@ -9,7 +13,13 @@
 	</div>
 </div>
 
-<div class="eshop-section section">
+
+<div *ngIf="dataLoaded == false"  style="margin-left: 50%;" class="spinner-grow text-primary" role="status">
+	<span class="visually-hidden">Loading...</span>
+</div>
+
+
+<div *ngIf="dataLoaded == true"  class="eshop-section section">
 	<div class="container">
 		<div class="row">
 			<div *ngFor="let videoEntryphoneSystem of videoEntryphoneSystems" class="col-md-3 col-sm-6">
@@ -47,22 +57,10 @@
 				<!-- End Product -->
 			</div>
 
-			<div class="pagination-wrapper ">
-				<ul class="pagination pagination-lg">
-					<li class="disabled"><a href="#">Önceki</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-					<li><a href="#">10</a></li>
-					<li><a href="#">Sonraki</a></li>
-				</ul>
-			</div>
+		
+			
+			 
 		</div>
 	</div>
 </div>
+<app-footer></app-footer>
