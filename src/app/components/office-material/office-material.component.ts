@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
-import { OfficeMaterialImage } from 'src/app/models/officeMaterialImage';
-import { OfficeMaterialImageService } from 'src/app/services/office-material-image.service';
 import { OfficeMaterialService } from 'src/app/services/office-material.service';
 import { environment } from 'src/environments/environment';
 

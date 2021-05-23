@@ -1,0 +1,18 @@
+  <form [formGroup]="productDeleteForm">
+        <h4 style="margin-top: 5%;">Silinecek Ürünü Seçiniz</h4>
+        <div class="form-floating">
+            <select [(ngModel)]="productFilter" class="form-select" id="officeMaterialId" formControlName="officeMaterialId"
+                aria-label="Floating label select example">
+                <option *ngFor="let videoEntryphoneSystem of videoEntryphoneSystems"
+                 [value]="videoEntryphoneSystem.videoEntryphoneSystemsId"
+                   
+                    selected="{{getSelectedProduct(videoEntryphoneSystem.videoEntryphoneSystemsId)}}">
+                    {{videoEntryphoneSystem.videoName}}</option>
+            </select>
+            <label for="floatingSelect">Silinecek Ürünü Seçiniz</label>
+        </div>
+  </form>
+
+  <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto" >
+        <button style="width: 80%; margin-left: 9%; " type="button"  (click)="delete()" class="btn btn-danger btn-lg">Sil</button>
+    </div>

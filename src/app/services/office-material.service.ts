@@ -28,7 +28,7 @@ export class OfficeMaterialService {
   //******POST******/
 
   addProduct(officeMaterial: OfficeMaterial): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + "OfficeMaterials/add", officeMaterial,)
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "OfficeMaterials/add", officeMaterial)
   }
 
   updateProduct(officeMaterial: OfficeMaterial): Observable<SingleResponseModel<OfficeMaterial>> {
@@ -40,4 +40,3 @@ export class OfficeMaterialService {
     return this.httpClient.post<SingleResponseModel<OfficeMaterial>>(this.apiUrl + "OfficeMaterials/delete", officeMaterial)
   }
 }
-//

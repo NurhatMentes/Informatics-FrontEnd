@@ -1,0 +1,78 @@
+<div class="container" style="padding-top: 20px; width: 85%; ">
+
+
+
+    <form [formGroup]="productUpdateForm">
+        <h4>Güncellenecek Ürünü Seçiniz</h4>
+        <div class="form-floating">
+            <select [(ngModel)]="productFilter" class="form-select" id="securityCameraSystemId" formControlName="securityCameraSystemId"
+                aria-label="Floating label select example">
+                <option *ngFor="let securityCameraSystem of securityCameraSystems"
+                 [value]="securityCameraSystem.securityCameraSystemId"
+                   
+                    selected="{{getSelectedProduct(securityCameraSystem.securityCameraSystemId)}}">
+                    {{securityCameraSystem.cameraName}}</option>
+            </select>
+            <label for="floatingSelect">Güncellenecek Ürünü Seçiniz</label>
+        </div>
+        <h4 style="padding-top: 10px;">Ürünün Adı</h4>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="cameraName" placeholder="product name"
+                formControlName="cameraName" />
+            <label for="floatingInput">Ürünün Adı</label>
+        </div>
+
+        <h4 style="padding-top: 10px;">Ürünün Fiyatı</h4>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="price" placeholder="product price" formControlName="price" />
+            <label for="floatingInput">Ürünün Fiyatı</label>
+        </div>
+
+        <h4 style="padding-top: 10px;">Ürünün Eski Fiyatı</h4>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="oldPrice" placeholder="product oldPrice"
+                formControlName="oldPrice" />
+            <label for="floatingInput">Ürünün Eski Fiyatı</label>
+        </div>
+
+        <h4 style="padding-top: 10px;">Ürünün Stok Sayısı</h4>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="stockQuantity" placeholder="product stockQuantity"
+                formControlName="stockQuantity" />
+            <label for="floatingInput">Ürünün Stok Sayısı</label>
+        </div>
+
+        <h4 style="padding-top: 10px;">Ürünün Açıklaması</h4>
+        <div class="form-floating mb-3">
+            <angular-editor formControlName="description">Ürünün Açıklaması</angular-editor>
+        </div>
+
+        <h4 style="padding-top: 10px;">Ürünün Kısa Açıklaması</h4>
+        <div class="form-floating mb-3">
+            <ckeditor  data={[]} [config]="{ extraPlugins: 'divarea' }" formControlName="quickDescription"></ckeditor>
+        </div>
+
+        <h4 style="padding-top: 10px;">Özellikler</h4>
+        <div class="form-floating mb-3">
+            <ckeditor [config]="{ extraPlugins: 'divarea' }" formControlName="features"></ckeditor>
+        </div>
+
+
+
+
+        <label style="margin-left: 1px;">Resim Ekle</label>
+        <div class="form-floating mb-3">
+            <div class="input-group">
+                <input type="file" formControlName="imagePath" class="form-control" id="imagePath"
+                    aria-describedby="imagePath" aria-label="Upload">
+            </div>
+        </div>
+    </form>
+    <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto" >
+        <button style="width: 80%; margin-left: 9%; " type="button" (click)="update()" class="btn btn-success btn-lg">Güncelle</button>
+    </div>
+
+</div>
+
+
+

@@ -1,3 +1,4 @@
+import { convertActionBinding } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
@@ -13,8 +14,9 @@ import { environment } from 'src/environments/environment';
 export class OfficeMaterialDetailComponent implements OnInit {
 
   officeMaterials: OfficeMaterial[] = [];
+  
   imageBasePath = environment.baseUrl
-  dataLoaded = false;
+  dataLoaded = false; 
 
   constructor(private officeMaterialService: OfficeMaterialService, private activatedRoute: ActivatedRoute,) { }
 

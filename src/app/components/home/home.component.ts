@@ -9,14 +9,17 @@ import { OfficeMaterial } from 'src/app/models/officeMaterial';
 export class HomeComponent implements OnInit {
   officeMaterials: OfficeMaterial[] = [];
   currentCategory: OfficeMaterial;
+  dataLoaded = false
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataLoaded = true;
   }
 
   setCurrentCategory(officeMaterial: OfficeMaterial) {
     this.currentCategory = officeMaterial;
+   
   }
 
 }
