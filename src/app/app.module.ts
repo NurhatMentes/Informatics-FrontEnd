@@ -47,6 +47,8 @@ import { OfficeMaterialDeleteComponent } from './components/dashboard/office-mat
 import { ElectricityComponent } from './components/electricity/electricity.component';
 import { AuthInterceptor } from './components/interceptors/auth.interceptor';
 import { LoginGuard } from './guards/login.guard';
+import { ModalModule } from './components/dashboard/_modal';
+
 
 
 
@@ -88,7 +90,8 @@ import { LoginGuard } from './guards/login.guard';
     VideoEntryphoneSystemDeleteComponent,
     SecurityCameraSystemDeleteComponent,
     OfficeMaterialDeleteComponent,
-    ElectricityComponent
+    ElectricityComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -100,6 +103,7 @@ import { LoginGuard } from './guards/login.guard';
     CKEditorModule,
     AngularEditorModule,
     TexteditorModule,
+    ModalModule,
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right"
     })

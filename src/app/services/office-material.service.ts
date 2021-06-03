@@ -16,6 +16,11 @@ export class OfficeMaterialService {
 
 
   getOfficeMaterial(): Observable<ListResponseModel<OfficeMaterial>> {
+    let newPath = this.apiUrl + 'OfficeMaterials/getalldto';
+    return this.httpClient.get<ListResponseModel<OfficeMaterial>>(newPath);
+  }
+
+  getProducts(): Observable<ListResponseModel<OfficeMaterial>> {
     let newPath = this.apiUrl + 'OfficeMaterials/getall';
     return this.httpClient.get<ListResponseModel<OfficeMaterial>>(newPath);
   }

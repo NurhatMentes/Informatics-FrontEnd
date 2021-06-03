@@ -69,6 +69,7 @@ const routes: Routes = [
   { path: "videoEntryphoneSystem/productDetail/:id", component: VideoEntryphoneSystemDetailComponent },
 ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -1,4 +1,4 @@
-<div class="container" style="padding-top: 20px;">
+<div class="container" style="padding-top: 20px">
     <form [formGroup]="productAddForm">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="officeName" placeholder="product name"
@@ -23,32 +23,62 @@
             <label for="floatingInput">Stok Sayısı</label>
         </div>
 
-        <label style="margin-left: 1px;">Açıklama</label>
+        <label style="margin-left: 1px">Açıklama</label>
         <div class="form-floating mb-3">
-            <ckeditor data={} [config]="{ extraPlugins: 'divarea' }" formControlName="description"></ckeditor>
+            <ckeditor data="{}" [config]="{ extraPlugins: 'divarea' }" formControlName="description"></ckeditor>
         </div>
 
-        <label style="margin-left: 1px;">Kısa Açıklama</label>
+        <label style="margin-left: 1px">Kısa Açıklama</label>
         <div class="form-floating mb-3">
             <ckeditor data="Some initial data" [config]="{ extraPlugins: 'divarea' }"
                 formControlName="quickDescription"></ckeditor>
         </div>
 
-        <label style="margin-left: 1px;">Özellikler</label>
+        <label style="margin-left: 1px">Özellikler</label>
         <div class="form-floating mb-3">
             <ckeditor [config]="{ extraPlugins: 'divarea' }" formControlName="features"></ckeditor>
         </div>
-
-        <label style="margin-left: 1px;">Resim Ekle</label>
-        <div class="mb-3">
-            <input type="file" id="myfile" name="myfile" formControlName="imagePath">
-        </div>
-
-
-
-</form>
-<div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto">
-    <button style="width: 80%; margin-left: 9%; " type="button" (click)="add()"
-        class="btn btn-success btn-lg">Ekle</button>
+    </form>
+    <div *ngIf="isAdded==false" style="margin-top: 5%" class="d-grid gap-2 col-6 mx-auto">
+        <button style="width: 80%; margin-left: 9%" type="button" (click)="add()" class="btn btn-success btn-lg">
+            Ekle
+        </button>
+    </div>
+    <div *ngIf="isAdded==true" >
+        <button (click)="openModal('custom-modal-1');" style="width: 80%; margin-left: 9%"
+        class="btn btn-primary btn-lg">Resim Ekle</button>
+    </div>
 </div>
-</div>
+
+
+<jw-modal id="custom-modal-1">
+    <h1>A Custom Modal Window!</h1>
+    <div>
+        <form [formGroup]="imageAddForm">
+            <div class="mb-3">
+                <div class="form-group">
+                    <label style="margin-left: 1px">Ürünün Resmini Seçiniz</label>
+                    <div class="mb-3">
+                        <select [(ngModel)]="productFilter" class="form-control" id="officeMaterialId"
+                            formControlName="officeMaterialId" name="file">
+                            <option *ngFor="let officeMaterial of officeMaterials"
+                                [ngValue]="officeMaterial.officeMaterialId"
+                                 selected="{{getSelectedProduct(officeMaterial.officeMaterialId)}}">
+                                {{ officeMaterial.officeMaterialId }} : {{ officeMaterial.officeName }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="file" (change)="uploadFile($event)"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button (click)="closeModal('custom-modal-1');">Kapat</button>
+    <button (click)="submitForm()" class="btn btn-success btn-lg" routerLink="/dashboard">Resim Ekle</button>
+</jw-modal>

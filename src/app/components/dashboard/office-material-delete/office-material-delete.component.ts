@@ -1,3 +1,4 @@
+import { ResourceLoader } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -41,13 +42,14 @@ export class OfficeMaterialDeleteComponent implements OnInit {
     if (this.productDeleteForm.valid) {
       let model = Object.assign({}, this.productDeleteForm.value);
       this.productService.deleteProduct(model).subscribe(response => {
-        this.toastrService.show(response.message, "Silme Başarılı!")
         this.toastrService.info(response.message, "Silme Başarılı!")
         console.log(response.message)
         window.location.reload();
+      },e => {
+        this.toastrService.success("Ürünü Silme Başarılı!");
       })
     } else {
-      this.toastrService.error("Formunuz eksik", "Dikkat!")
+      this.toastrService.error('Form Bilgileriniz Eksik');
     }
   }
 
