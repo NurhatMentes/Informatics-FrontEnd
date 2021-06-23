@@ -44,32 +44,22 @@
 
         <h4 style="padding-top: 10px;">Ürünün Açıklaması</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="description">Ürünün Açıklaması</angular-editor>
+            <angular-editor formControlName="description"  allowedContent="true">Ürünün Açıklaması</angular-editor>
         </div>
 
         <h4 style="padding-top: 10px;">Ürünün Kısa Açıklaması</h4>
         <div class="form-floating mb-3">
-            <ckeditor  data={[]} [config]="{ extraPlugins: 'divarea' }" formControlName="quickDescription"></ckeditor>
+             <angular-editor formControlName="quickDescription"  ></angular-editor>
         </div>
 
         <h4 style="padding-top: 10px;">Özellikler</h4>
         <div class="form-floating mb-3">
-            <ckeditor [config]="{ extraPlugins: 'divarea' }" formControlName="features"></ckeditor>
+            <angular-editor formControlName="features" ></angular-editor>
         </div>
 
-
-
-
-        <label style="margin-left: 1px;">Resim Ekle</label>
-        <div class="form-floating mb-3">
-            <div class="input-group">
-                <input type="file" formControlName="imagePath" class="form-control" id="imagePath"
-                    aria-describedby="imagePath" aria-label="Upload">
-            </div>
-        </div>
     </form>
 <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto" >
-        <button style="width: 80%; margin-left: 9%; " type="button" (click)="update()" class="btn btn-success btn-lg">Güncelle</button>
+        <button style="width: 80%; margin-left: 9%; " type="button" (click)="update()" routerLink="/dashboard" class="btn btn-success btn-lg">Güncelle</button>
     </div>
 
 </div>

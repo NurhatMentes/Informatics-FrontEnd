@@ -1,6 +1,6 @@
 export interface VideoEntryphoneSystemImage{
     videoEntryphoneSystemImagesId: number;
-    videoEntryphoneSystemId: number;
+    videoEntryphoneSystemsId: number;
     imagePath: string;
     date: Date;
 }

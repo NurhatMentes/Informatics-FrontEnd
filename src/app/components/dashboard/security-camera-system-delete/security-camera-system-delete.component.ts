@@ -24,32 +24,36 @@ export class SecurityCameraSystemDeleteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.updateProductAddForm();
+    this.deleteProductAddForm();
     this.getSecurityCameraSystems()
   }
 
 
 
-  updateProductAddForm() {
+  deleteProductAddForm() {
     this.productDeleteForm = this.formBuider.group({
       securityCameraSystemId: [null, Validators.required],
     })
   }
 
+
   delete() {
     if (this.productDeleteForm.valid) {
       let model = Object.assign({}, this.productDeleteForm.value);
       this.productService.deleteProduct(model).subscribe(response => {
-        this.toastrService.success(response.message, "Silme Başarılı!")
+        this.toastrService.info(response.message, "Silme Başarılı!")
         console.log(response.message)
+        window.location.reload();
+      }, e => {
+        this.toastrService.success("Ürünü Silme Başarılı!");
       })
     } else {
-      this.toastrService.error("Formunuz eksik", "Dikkat!")
+      this.toastrService.error('Form Bilgileriniz Eksik');
     }
   }
 
   getSecurityCameraSystems() {
-    this.productService.getSecurityCameraSystems().subscribe(response => {
+    this.productService.getProduct().subscribe(response => {
       this.securityCameraSystems = response.data
       console.log(response.data)
       this.dataLoaded = true;

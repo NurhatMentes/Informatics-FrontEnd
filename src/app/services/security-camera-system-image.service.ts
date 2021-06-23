@@ -27,5 +27,16 @@ export class SecurityCameraSystemImageService {
   addProduct(securityImageCameraSystem: SecurityCameraSystemImage): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.apiUrl + "SecurityCameraSystemImages/add", securityImageCameraSystem)
   }
+
+
+  upload(ImageAdd: SecurityCameraSystemImage): Observable<ResponseModel> {
+    let newPath = this.apiUrl + "SecurityCameraSystemImages";
+    return this.httpClient.post<ResponseModel>(newPath, ImageAdd);
+  }
+
+  updated(ImageAdd: SecurityCameraSystemImage): Observable<ResponseModel> {
+    let newPath = this.apiUrl + "SecurityCameraSystemImages/add";
+    return this.httpClient.post<ResponseModel>(newPath, ImageAdd);
+  }
   
 }

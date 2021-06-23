@@ -1,3 +1,5 @@
+import { SecurityCameraSystemImage } from "./securityCameraSystemImage";
+
 export interface SecurityCameraSystem{
     securityCameraSystemId: number;
     cameraName: string;
@@ -7,5 +9,5 @@ export interface SecurityCameraSystem{
     description: string;
     quickDescription: string;
     features: string;
-    imagePath: string[];
+    imagePath: SecurityCameraSystemImage[];
 }

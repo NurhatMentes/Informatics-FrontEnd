@@ -18,6 +18,11 @@ export class VideoEntryphoneSystemService {
 
 
   getVideoEntryphoneSystems(): Observable<ListResponseModel<VideoEntryphoneSystem>> {
+    let newPath = this.apiUrl + 'VideoEntryphoneSystems/getalldto';
+    return this.httpClient.get<ListResponseModel<VideoEntryphoneSystem>>(newPath);
+  }
+
+  getProduct(): Observable<ListResponseModel<VideoEntryphoneSystem>> {
     let newPath = this.apiUrl + 'VideoEntryphoneSystems/getall';
     return this.httpClient.get<ListResponseModel<VideoEntryphoneSystem>>(newPath);
   }

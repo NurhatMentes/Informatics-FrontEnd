@@ -73,12 +73,13 @@
             <div class="mb-3">
                 <div class="form-group">
                     <div class="form-group">
-                        <input type="file" (change)="uploadFile($event)"/>
+                        <input type="file" (change)="uploadFile($event)" multiple/>
                     </div>
                 </div>
             </div>
         </form>
     </div>
     <button (click)="closeModal('custom-modal-1');">Kapat</button>
-    <button (click)="submitForm()" class="btn btn-success btn-lg" routerLink="/dashboard">Resim Ekle</button>
+    <button (click)="submitForm()" class="btn btn-success btn-lg">Resim Ekle</button>
+    <button  class="btn btn-info btn-lg" routerLink="/dashboard">Sonlandır</button>
 </jw-modal>

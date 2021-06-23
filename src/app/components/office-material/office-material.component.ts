@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
 import { OfficeMaterialService } from 'src/app/services/office-material.service';
 import { environment } from 'src/environments/environment';
+import {distinct} from'rxjs/operators'
+import { from, pipe, zip } from 'rxjs';
 
 @Component({
   selector: 'app-office-material',
@@ -14,14 +16,13 @@ export class OfficeMaterialComponent implements OnInit {
   officeMaterials: OfficeMaterial[] = [];
   imageBasePath = environment.baseUrl
   dataLoaded = false;
-
   constructor(
     private officeMaterialService: OfficeMaterialService) { }
 
   ngOnInit(): void {
-
-   this.getOfficeMaterial()
+    this.getOfficeMaterial()
   }
+
 
   getOfficeMaterial() {
     this.officeMaterialService.getOfficeMaterial().subscribe(response => {

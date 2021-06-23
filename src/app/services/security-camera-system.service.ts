@@ -17,9 +17,15 @@ export class SecurityCameraSystemService {
 
 
   getSecurityCameraSystems(): Observable<ListResponseModel<SecurityCameraSystem>> {
+    let newPath = this.apiUrl + 'SecurityCameraSystems/getalldto';
+    return this.httpClient.get<ListResponseModel<SecurityCameraSystem>>(newPath);
+  }
+
+  getProduct(): Observable<ListResponseModel<SecurityCameraSystem>> {
     let newPath = this.apiUrl + 'SecurityCameraSystems/getall';
     return this.httpClient.get<ListResponseModel<SecurityCameraSystem>>(newPath);
   }
+
 
   getProductDetail(id: number): Observable<ListResponseModel<SecurityCameraSystem>> {
     let newPath = this.apiUrl + 'SecurityCameraSystems/getproductdetail?id=' + id;

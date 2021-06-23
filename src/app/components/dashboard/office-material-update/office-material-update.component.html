@@ -42,77 +42,40 @@
 
         <h4 style="padding-top: 10px;">Ürünün Açıklaması</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="description" config.allowedContent=true;>Ürünün Açıklaması</angular-editor>
+            <angular-editor formControlName="description"  allowedContent="true">Ürünün Açıklaması</angular-editor>
         </div>
 
         <h4 style="padding-top: 10px;">Ürünün Kısa Açıklaması</h4>
         <div class="form-floating mb-3">
-            <ckeditor formControlName="quickDescription" config.allowedContent=true;></ckeditor>
+            <!-- <ckeditor  [editor]="Editor" [config]="editorConfig" name="editor1" data="config.allowedContent=true"  formControlName="quickDescription"  config.allowedContent="true"  ></ckeditor> -->
+             <angular-editor formControlName="quickDescription"  ></angular-editor>
         </div>
 
         <h4 style="padding-top: 10px;">Özellikler</h4>
         <div class="form-floating mb-3">
-            <ckeditor [spellcheck]="true" formControlName="features"></ckeditor>
+            <!-- <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="features" ></ckeditor> -->
+            <angular-editor formControlName="features" ></angular-editor>
         </div>
-        <button (click)="openModal('custom-modal-1');" style="width: 80%; margin-left: 9%"
-        class="btn btn-primary btn-lg">Resim Güncelle</button>
-      
+     
     </form>
     <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto">
         <button style="width: 80%; margin-left: 9%; " type="button" (click)="update()"
-            class="btn btn-success btn-lg">Güncelle</button>
+            class="btn btn-success btn-lg" routerLink="/dashboard">Güncelle</button>
     </div>
 </div>
 
 
 
-
-
-
 <script>
-    CKEDITOR.replace('editor1', {
-        format_tags: 'p;h1;h2;h3;h4;h5;h6;pre;address;div;strong;'
-    });
-    config.allowedContent = true;
-    allowedContent = true;
+   CKEDITOR.editorConfig = function (config) {
+    config.language = 'es';
+    config.uiColor = '#F7B42C';
+    config.height = 300;
+    config.toolbarCanCollapse = true;
+
+};
+CKEDITOR.replace('editor1');
 </script>
-
-
-<jw-modal id="custom-modal-1">
-    <h1>A Custom Modal Window!</h1>
-      <div>
-        <form [formGroup]="imageAddForm">
-            <div class="mb-3">
-                <div class="form-group">
-                    <label style="margin-left: 1px">Ürünün Resmini Seçiniz</label>
-                    <div class="mb-3">
-                        <select [(ngModel)]="productFilter" class="form-control" id="officeMaterialId"
-                            formControlName="officeMaterialId" name="file">
-                            <option *ngFor="let officeMaterial of officeMaterials"
-                                [ngValue]="officeMaterial.officeMaterialId"
-                                 selected="{{getSelectedProduct(officeMaterial.officeMaterialId)}}">
-                                {{ officeMaterial.officeMaterialId }} : {{ officeMaterial.officeName }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="form-group">
-                    <div class="form-group">
-                        <input type="file" (change)="uploadFile($event)"/>
-                          <button (click)="submitForm()" style="margin-top: 1%;"
-                           class="btn btn-success btn-lg" routerLink="/dashboard">Resmi Güncelle</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <button (click)="closeModal('custom-modal-1');">Kapat</button>
-</jw-modal>
-
-
-
 <!-- 
 <div *ngFor="let officeMaterial of officeMaterials">
     

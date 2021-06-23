@@ -37,11 +37,10 @@ export class SecurityCameraSystemUpdateComponent implements OnInit {
       cameraName: [null, Validators.required],
       price: [null, Validators.required],
       oldPrice: [null],
-      stockQuantity: [null, Validators.required],
-      description: [null, Validators.required],
-      quickDescription: [null, Validators.required],
+      stockQuantity: ["", Validators.required],
+      description: ["", Validators.required],
+      quickDescription: ["", Validators.required],
       features: [null, Validators.required],
-      imagePath: [null],
     })
   }
 

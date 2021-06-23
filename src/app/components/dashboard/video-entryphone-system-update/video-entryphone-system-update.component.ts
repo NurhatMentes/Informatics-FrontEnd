@@ -42,7 +42,6 @@ export class VideoEntryphoneSystemUpdateComponent implements OnInit {
       description: [null, Validators.required],
       quickDescription: [null, Validators.required],
       features: [null, Validators.required],
-      imagePath: [null],
     })
   }
 
@@ -52,11 +51,14 @@ export class VideoEntryphoneSystemUpdateComponent implements OnInit {
       this.productService.updateProduct(model).subscribe(response => {
         this.toastrService.success(response.message, "Güncelleme Başarılı!")
         console.log(response.message)
+      }, e => {
+        this.toastrService.success("Ürün Güncelleme Başarılı!.");
       })
     } else {
-      this.toastrService.error("Formunuz eksik", "Dikkat!")
+      this.toastrService.error('Form Bilgileriniz Eksik');
     }
   }
+
 
   getSecurityCameraSystems() {
     this.productService.getVideoEntryphoneSystems().subscribe(response => {

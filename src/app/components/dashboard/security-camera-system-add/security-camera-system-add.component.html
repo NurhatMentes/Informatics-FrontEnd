@@ -44,19 +44,49 @@
                   formControlName="features"></ckeditor>
         </div>
 
-          
-        
-        
-        <label style="margin-left: 1px;">Resim Ekle</label>
-        <div class="form-floating mb-3">
-            <div class="input-group">
-                <input type="file" formControlName="imagePath" class="form-control" id="imagePath"
-                    aria-describedby="imagePath" aria-label="Upload">
-            </div>
-        </div>
     </form>
-    <div style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto" >
-        <button style="width: 80%; margin-left: 9%; " type="button" (click)="add()" class="btn btn-success btn-lg">Ekle</button>
+    <div *ngIf="isAdded==false" style="margin-top: 5%" class="d-grid gap-2 col-6 mx-auto">
+        <button style="width: 80%; margin-left: 9%" type="button" (click)="add()" class="btn btn-success btn-lg">
+            Ekle
+        </button>
     </div>
-
+    <div *ngIf="isAdded==true" >
+        <button (click)="openModal('custom-modal-1');" style="width: 80%; margin-left: 9%"
+        class="btn btn-primary btn-lg">Resim Ekle</button>
+    </div>
 </div>
+
+
+
+<jw-modal id="custom-modal-1">
+    <h1>A Custom Modal Window!</h1>
+    <div>
+        <form [formGroup]="imageAddForm">
+            <div class="mb-3">
+                <div class="form-group">
+                    <label style="margin-left: 1px">Ürünün Resmini Seçiniz</label>
+                    <div class="mb-3">
+                        <select [(ngModel)]="productFilter" class="form-control" id="securityCameraSystemId"
+                            formControlName="securityCameraSystemId" name="file">
+                            <option *ngFor="let securityCameraSystem of securityCameraSystems"
+                                [ngValue]="securityCameraSystem.securityCameraSystemId"
+                                 selected="{{getSelectedProduct(securityCameraSystem.securityCameraSystemId)}}">
+                                {{securityCameraSystem.securityCameraSystemId }} : {{ securityCameraSystem.cameraName }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="file" (change)="uploadFile($event)" multiple/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button (click)="closeModal('custom-modal-1');">Kapat</button>
+    <button (click)="submitForm()" class="btn btn-success btn-lg">Resim Ekle</button>
+    <button  class="btn btn-info btn-lg" routerLink="/dashboard">Sonlandır</button>
+</jw-modal>

@@ -1,3 +1,5 @@
+import { VideoEntryphoneSystemImage } from "./videoEntryphoneSystemImage";
+
 export interface VideoEntryphoneSystem{
     videoEntryphoneSystemsId: number;
     videoName: string;
@@ -7,5 +9,5 @@ export interface VideoEntryphoneSystem{
     description: string;
     quickDescription: string;
     features: string;
-    imagePath: string[];
+    imagePath: VideoEntryphoneSystemImage[];
 }
