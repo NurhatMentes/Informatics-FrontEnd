@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,13 +11,13 @@ import { ListResponseModel } from '../models/listResponseModel';
 })
 export class ComputerRepairService {
 
-  apiUrl = 'https://localhost:44381/api/';
+
 
   constructor(private httpClient: HttpClient) { }
 
 
   getComputerRepairs(): Observable<ListResponseModel<ComputerRepair>>{
-    let newPath = this.apiUrl + 'ComputerRepairs/getall';
+    let newPath = environment.apiUrl+ 'ComputerRepairs/getall';
     return this.httpClient.get<ListResponseModel<ComputerRepair>>(newPath);
   }
 }

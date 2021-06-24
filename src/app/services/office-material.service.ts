@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,38 +11,38 @@ import { SingleResponseModel } from '../models/singleResponseModel';
   providedIn: 'root'
 })
 export class OfficeMaterialService {
-  apiUrl = 'https://localhost:44381/api/';
+
 
   constructor(private httpClient: HttpClient) { }
 
 
   getOfficeMaterial(): Observable<ListResponseModel<OfficeMaterial>> {
-    let newPath = this.apiUrl + 'OfficeMaterials/getalldto';
+    let newPath = environment.apiUrl + 'OfficeMaterials/getalldto';
     return this.httpClient.get<ListResponseModel<OfficeMaterial>>(newPath);
   }
 
   getProducts(): Observable<ListResponseModel<OfficeMaterial>> {
-    let newPath = this.apiUrl + 'OfficeMaterials/getall';
+    let newPath = environment.apiUrl + 'OfficeMaterials/getall';
     return this.httpClient.get<ListResponseModel<OfficeMaterial>>(newPath);
   }
 
   getProductDetail(id: number): Observable<ListResponseModel<OfficeMaterial>>{
-    let newPath = this.apiUrl + 'OfficeMaterials/getproductdetail?id=' + id;
+    let newPath = environment.apiUrl + 'OfficeMaterials/getproductdetail?id=' + id;
     return this.httpClient.get<ListResponseModel<OfficeMaterial>>(newPath);
   }
   
   //******POST******/
 
   addProduct(officeMaterial: OfficeMaterial): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl + "OfficeMaterials/add", officeMaterial)
+    return this.httpClient.post<ResponseModel>(environment.apiUrl + "OfficeMaterials/add", officeMaterial)
   }
 
   updateProduct(officeMaterial: OfficeMaterial): Observable<SingleResponseModel<OfficeMaterial>> {
-    return this.httpClient.post<SingleResponseModel<OfficeMaterial>>(this.apiUrl + "OfficeMaterials/update", officeMaterial)
+    return this.httpClient.post<SingleResponseModel<OfficeMaterial>>(environment.apiUrl + "OfficeMaterials/update", officeMaterial)
   }
 
 
   deleteProduct(officeMaterial: OfficeMaterial): Observable<SingleResponseModel<OfficeMaterial>> {
-    return this.httpClient.post<SingleResponseModel<OfficeMaterial>>(this.apiUrl + "OfficeMaterials/delete", officeMaterial)
+    return this.httpClient.post<SingleResponseModel<OfficeMaterial>>(environment.apiUrl + "OfficeMaterials/delete", officeMaterial)
   }
 }

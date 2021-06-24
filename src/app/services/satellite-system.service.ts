@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,13 +10,12 @@ import { SatelliteSystem } from '../models/satelliteSystem';
 })
 export class SatelliteSystemService {
 
-  apiUrl = 'https://localhost:44381/api/';
 
   constructor(private httpClient: HttpClient) { }
 
 
   getSatelliteSystems(): Observable<ListResponseModel<SatelliteSystem>> {
-    let newPath = this.apiUrl + 'SatelliteSystems/getall';
+    let newPath = environment.apiUrl + 'SatelliteSystems/getall';
     return this.httpClient.get<ListResponseModel<SatelliteSystem>>(newPath);
   }
 }

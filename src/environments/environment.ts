@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://localhost:44381/images/'
+  baseUrl: 'https://kaynarcabilisim.site/images/',
+  apiUrl: 'https://kaynarcabilisim.site/api/'
 };
 
 /*

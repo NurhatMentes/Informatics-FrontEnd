@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,13 +10,13 @@ import { TonerRefill } from '../models/tonerRefill';
 })
 export class TonerRefillService {
 
-  apiUrl = 'https://localhost:44381/api/';
+
 
   constructor(private httpClient: HttpClient) { }
 
 
   getTonerRefills(): Observable<ListResponseModel<TonerRefill>> {
-    let newPath = this.apiUrl + 'TonerRefills/getall';
+    let newPath = environment.apiUrl + 'TonerRefills/getall';
     return this.httpClient.get<ListResponseModel<TonerRefill>>(newPath);
   }
 }

@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,13 +9,12 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl = 'https://localhost:44381/api/';
 
   constructor(private httpClient: HttpClient) { }
 
 
   getUsers(): Observable<ListResponseModel<User>> {
-    let newPath = this.apiUrl + 'Users/getall';
+    let newPath = environment.apiUrl + 'Users/getall';
     return this.httpClient.get<ListResponseModel<User>>(newPath);
   }
 }
