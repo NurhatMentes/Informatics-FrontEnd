@@ -1,43 +1,47 @@
 <div class="container" style="padding-top: 20px;">
     <form [formGroup]="productAddForm">
+        <h4 style="padding-top: 10px;">Ürünün Adı</h4>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="videoName" placeholder="product name"
-                formControlName="videoName" />
-            <label for="floatingInput">Ürün Adı</label>
+            <input type="text" class="form-control" id="officeName" placeholder="product name"
+                formControlName="officeName" />
+            <label for="floatingInput">Ürünün Adı</label>
         </div>
 
+        <h4 style="padding-top: 10px;">Ürünün Fiyatı</h4>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="price" placeholder="product price" formControlName="price" />
-            <label for="floatingInput">Fiyat</label>
+            <input type="number" class="form-control" id="price" placeholder="product price" formControlName="price" />
+            <label for="floatingInput">Ürünün Fiyatı</label>
         </div>
 
+        <h4 style="padding-top: 10px;">Ürünün Eski Fiyatı</h4>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="oldPrice" placeholder="product oldPrice"
-                formControlName="oldPrice" />
+            <input type="number" class="form-control" id="oldPrice" placeholder="product oldPrice"
+                formControlName="oldPrice"  readonly>
             <label for="floatingInput">Eski Fiyat</label>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="stockQuantity" placeholder="product stockQuantity"
+            <input type="number" class="form-control" id="stockQuantity" placeholder="product stockQuantity"
                 formControlName="stockQuantity" />
             <label for="floatingInput">Stok Sayısı</label>
         </div>
 
-        <label style="margin-left: 1px;">Açıklama</label>
+         <h4 style="padding-top: 10px;">Ürünün Açıklaması</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="description"></angular-editor>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  formControlName="description"  allowedContent="true">Ürünün Açıklaması</textarea>
         </div>
 
-        <label style="margin-left: 1px;">Kısa Açıklama</label>
+        <h4 style="padding-top: 10px;">Ürünün Kısa Açıklaması</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="quickDescription"></angular-editor>
+            <!-- <ckeditor  [editor]="Editor" [config]="editorConfig" name="editor1" data="config.allowedContent=true"  formControlName="quickDescription"  config.allowedContent="true"  ></ckeditor> -->
+             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  formControlName="quickDescription"  ></textarea>
         </div>
 
-        <label style="margin-left: 1px;">Özellikler</label>
+         <h4 style="padding-top: 10px;">Özellikler</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="features"></angular-editor>
+            <!-- <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="features" ></ckeditor> -->
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  formControlName="features" ></textarea>
         </div>
-
 
     </form>
     <div *ngIf="isAdded==false" style="margin-top: 5%;" class="d-grid gap-2 col-6 mx-auto">

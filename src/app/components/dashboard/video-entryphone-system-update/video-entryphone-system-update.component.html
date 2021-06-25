@@ -44,17 +44,19 @@
 
         <h4 style="padding-top: 10px;">Ürünün Açıklaması</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="description"  allowedContent="true">Ürünün Açıklaması</angular-editor>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"  allowedContent="true">Ürünün Açıklaması</textarea>
         </div>
 
         <h4 style="padding-top: 10px;">Ürünün Kısa Açıklaması</h4>
         <div class="form-floating mb-3">
-             <angular-editor formControlName="quickDescription"  ></angular-editor>
+            <!-- <ckeditor  [editor]="Editor" [config]="editorConfig" name="editor1" data="config.allowedContent=true"  formControlName="quickDescription"  config.allowedContent="true"  ></ckeditor> -->
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="quickDescription"  ></textarea>
         </div>
 
         <h4 style="padding-top: 10px;">Özellikler</h4>
         <div class="form-floating mb-3">
-            <angular-editor formControlName="features" ></angular-editor>
+            <!-- <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="features" ></ckeditor> -->
+             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="features" ></textarea>
         </div>
 
     </form>
