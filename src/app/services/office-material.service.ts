@@ -2,10 +2,10 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListResponseModel } from '../../models/listResponseModel';
-import { OfficeMaterial } from '../../models/officeMaterial';
-import { ResponseModel } from '../../models/responseModel';
-import { SingleResponseModel } from '../../models/singleResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
+import { OfficeMaterial } from '../models/officeMaterial';
+import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'

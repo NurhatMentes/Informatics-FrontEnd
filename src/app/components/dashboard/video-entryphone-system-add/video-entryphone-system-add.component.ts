@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { VideoEntryphoneSystem } from 'src/app/models/videoEntryphoneSystem';
-import { VideoEntryphoneSystemImageService } from 'src/app/guards/services/video-entryphone-system-image.service';
-import { VideoEntryphoneSystemService } from 'src/app/guards/services/video-entryphone-system.service';
+import { VideoEntryphoneSystemImageService } from 'src/app/services/video-entryphone-system-image.service';
+import { VideoEntryphoneSystemService } from 'src/app/services/video-entryphone-system.service';
 import { ModalService } from '../_modal';
 
 @Component({

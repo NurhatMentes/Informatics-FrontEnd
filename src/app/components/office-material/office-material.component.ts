@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
-import { OfficeMaterialService } from 'src/app/guards/services/office-material.service';
+import { OfficeMaterialService } from 'src/app/services/office-material.service';
 import { environment } from 'src/environments/environment';
 import {distinct} from'rxjs/operators'
 import { from, pipe, zip } from 'rxjs';

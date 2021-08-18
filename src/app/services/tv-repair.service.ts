@@ -2,8 +2,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListResponseModel } from '../../models/listResponseModel';
-import { TvRepair } from '../../models/tvRepair';
+import { ListResponseModel } from '../models/listResponseModel';
+import { TvRepair } from '../models/tvRepair';
 
 @Injectable({
   providedIn: 'root'

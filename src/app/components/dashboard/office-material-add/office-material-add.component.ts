@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { OfficeMaterialService } from 'src/app/guards/services/office-material.service';
+import { OfficeMaterialService } from 'src/app/services/office-material.service';
 import { OfficeMaterialImage } from 'src/app/models/officeMaterialImage';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
-import { OfficeMaterialImageService } from 'src/app/guards/services/office-material-image.service';
+import { OfficeMaterialImageService } from 'src/app/services/office-material-image.service';
 import { ModalService } from '../_modal';
 
 

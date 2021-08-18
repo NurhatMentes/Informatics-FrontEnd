@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { OfficeMaterial } from 'src/app/models/officeMaterial';
-import { OfficeMaterialService } from 'src/app/guards/services/office-material.service';
+import { OfficeMaterialService } from 'src/app/services/office-material.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

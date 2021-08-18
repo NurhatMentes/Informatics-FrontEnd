@@ -1,10 +1,10 @@
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpEvent, HttpParams, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ListResponseModel } from '../../models/listResponseModel';
-import { SecurityCameraSystemImage } from '../../models/securityCameraSystemImage';
+import { ListResponseModel } from '../models/listResponseModel';
+import { SecurityCameraSystemImage } from '../models/securityCameraSystemImage';
 import { Observable } from 'rxjs';
-import { ResponseModel } from '../../models/responseModel';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'

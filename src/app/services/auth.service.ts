@@ -1,9 +1,9 @@
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginModel } from '../../models/loginModel';
-import { SingleResponseModel } from '../../models/singleResponseModel';
-import { TokenModel } from '../../models/tokenModel';
+import { LoginModel } from '../models/loginModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
+import { TokenModel } from '../models/tokenModel';
 
 
 @Injectable({

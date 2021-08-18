@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { SecurityCameraSystem } from 'src/app/models/securityCameraSystem';
-import { SecurityCameraSystemService } from 'src/app/guards/services/security-camera-system.service';
+import { SecurityCameraSystemService } from 'src/app/services/security-camera-system.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

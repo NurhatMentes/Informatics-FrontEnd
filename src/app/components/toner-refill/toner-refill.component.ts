@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TonerRefill } from 'src/app/models/tonerRefill';
-import { TonerRefillService } from 'src/app/guards/services/toner-refill.service';
+import { TonerRefillService } from 'src/app/services/toner-refill.service';
 
 @Component({
   selector: 'app-toner-refill',
