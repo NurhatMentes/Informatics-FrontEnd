@@ -2,9 +2,9 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListResponseModel } from '../models/listResponseModel';
-import { ResponseModel } from '../models/responseModel';
-import { VideoEntryphoneSystemImage } from '../models/videoEntryphoneSystemImage';
+import { ListResponseModel } from '../../models/listResponseModel';
+import { ResponseModel } from '../../models/responseModel';
+import { VideoEntryphoneSystemImage } from '../../models/videoEntryphoneSystemImage';
 
 @Injectable({
   providedIn: 'root'
