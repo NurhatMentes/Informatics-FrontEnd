@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoEntryphoneSystem } from 'src/app/models/videoEntryphoneSystem';
-import { VideoEntryphoneSystemService } from 'src/app/services/video-entryphone-system.service';
+import { VideoEntryphoneSystemService } from 'src/app/guards/services/video-entryphone-system.service';
 import { environment } from 'src/environments/environment';
 import { ModalService } from '../dashboard/_modal';
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { VideoEntryphoneSystem } from 'src/app/models/videoEntryphoneSystem';
-import { VideoEntryphoneSystemService } from 'src/app/services/video-entryphone-system.service';
+import { VideoEntryphoneSystemService } from 'src/app/guards/services/video-entryphone-system.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

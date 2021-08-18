@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ComputerRepair } from 'src/app/models/computerRepair';
-import { ComputerRepairService } from 'src/app/services/computer-repair.service';
+import { ComputerRepairService } from 'src/app/guards/services/computer-repair.service';
 
 @Component({
   selector: 'app-computer-repair',

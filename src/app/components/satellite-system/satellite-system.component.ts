@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SatelliteSystem } from 'src/app/models/satelliteSystem';
-import { SatelliteSystemService } from 'src/app/services/satellite-system.service';
+import { SatelliteSystemService } from 'src/app/guards/services/satellite-system.service';
 
 @Component({
   selector: 'app-satellite-system',

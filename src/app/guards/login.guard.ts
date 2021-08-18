@@ -3,7 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 import { values } from '@uirouter/core';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './services/auth.service';
 
 @Injectable({
   providedIn: 'root'

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { SecurityCameraSystem } from 'src/app/models/securityCameraSystem';
-import { SecurityCameraSystemImageService } from 'src/app/services/security-camera-system-image.service';
-import { SecurityCameraSystemService } from 'src/app/services/security-camera-system.service';
+import { SecurityCameraSystemImageService } from 'src/app/guards/services/security-camera-system-image.service';
+import { SecurityCameraSystemService } from 'src/app/guards/services/security-camera-system.service';
 import { ModalService } from '../_modal';
 
 @Component({

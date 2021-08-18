@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TvRepair } from 'src/app/models/tvRepair';
-import { TvRepairService } from 'src/app/services/tv-repair.service';
+import { TvRepairService } from 'src/app/guards/services/tv-repair.service';
 
 @Component({
   selector: 'app-tv-repair',
