@@ -25,15 +25,16 @@ export class VideoEntryphoneSystemDeleteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.updateProductAddForm();
+    this.deleteProductAddForm();
     this.getSecurityCameraSystems()
   }
 
 
 
-  updateProductAddForm() {
+
+  deleteProductAddForm() {
     this.productDeleteForm = this.formBuider.group({
-      videoEntryphoneSystemsId: [null, Validators.required],
+      securityCameraSystemId: [null, Validators.required],
     })
   }
 
